@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class IndexControllerTest {
 
@@ -52,5 +53,15 @@ class IndexControllerTest {
 
             System.out.println("I got here preemptively");
         });
+    }
+
+    @Test
+    void testAssumptionTrue() {
+        assumeTrue("Guru".equalsIgnoreCase(System.getenv("Wibble")));
+    }
+
+    @Test
+    void testAssumptionTrueAssumptionIsTrue() {
+        assumeTrue("Guru".equalsIgnoreCase("Guru"));
     }
 }
