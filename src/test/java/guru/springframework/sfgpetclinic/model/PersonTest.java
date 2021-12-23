@@ -9,7 +9,7 @@ class PersonTest {
     @Test
     void groupedAssertions() {
         // given
-            Person person = new Person(1l, "Joe", "Buck");
+        Person person = new Person(1l, "Joe", "Buck");
 
         // then
         assertAll("Test Props Set",
