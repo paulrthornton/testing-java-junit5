@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import guru.springframework.sfgpetclinic.ControllerTests;
 import org.junit.jupiter.api.*;
 
 import java.time.Duration;
@@ -8,8 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-@Tag("controllers")
-class IndexControllerTest {
+class IndexControllerTest implements ControllerTests {
 
     IndexController controller;
 
@@ -58,7 +58,7 @@ class IndexControllerTest {
 
     @Test
     void testAssumptionTrue() {
-        assumeTrue("Guru".equalsIgnoreCase(System.getenv("Wibble")));
+        // assumeTrue("Guru".equalsIgnoreCase(System.getenv("Wibble")));
     }
 
     @Test
