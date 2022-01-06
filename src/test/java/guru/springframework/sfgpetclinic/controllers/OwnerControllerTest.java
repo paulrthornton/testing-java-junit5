@@ -20,6 +20,7 @@ class OwnerControllerTest {
 
     public static final String OWNERS_CREATE_OR_UPDATE_OWNER_FORM = "owners/createOrUpdateOwnerForm";
     public static final String REDIRECT_OWNERS_5 = "redirect:/owners/5";
+
     @Mock
     OwnerService ownerService;
 
