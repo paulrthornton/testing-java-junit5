@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.inOrder;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class OwnerControllerTest {
@@ -78,7 +78,7 @@ class OwnerControllerTest {
         assertThat("owners/ownersList").isEqualToIgnoringCase(viewName);
 
         inOrder.verify(ownerService).findAllByLastNameLike(anyString());
-        inOrder.verify(model).addAttribute(anyString(), anyList());
+        inOrder.verify(model, times(1)).addAttribute(anyString(), anyList());
     }
 
     @Test
@@ -92,6 +92,7 @@ class OwnerControllerTest {
         // then
         assertThat("%Buck%").isEqualToIgnoringCase(stringArgumentCaptor.getValue());
         assertThat("redirect:/owners/1").isEqualToIgnoringCase(viewName);
+        verifyNoInteractions(model);
     }
 
     @Test
